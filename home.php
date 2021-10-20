@@ -1,3 +1,21 @@
+<?php
+require "dbBroker.php";
+require "prijava.php";
+
+session_start();
+if(!isset($_SESSION["user_id"])){
+   header("Location:index.php");
+   exit();
+} 
+$rezultat=Prijava::getAll($conn);
+if(!$rezultat){
+    echo "Nastala je greška prilikom izvođenja upita <br>";
+    die();
+}
+else{
+
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +65,7 @@
             </thead>
             <tbody>
             <?php
-            while ($red = $result->fetch_array()) :
+            while ($red = $rezultat->fetch_array()) :
                 ?>
                 <tr>
                     <td><?php echo $red["predmet"] ?></td>
