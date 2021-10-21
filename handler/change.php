@@ -9,8 +9,8 @@ if($_POST['predmet']&&$_POST['katedra']&&$_POST['sala']&&$_POST['datum'])
     $status=$prijava->update($conn);
     if($status!=null){
         $isto=false;
-        echo "Success";
+        echo 'Success';
     }else
-    echo "Failed";
+    echo 'Failed';
 }
 ?>
