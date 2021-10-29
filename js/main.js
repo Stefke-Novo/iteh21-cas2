@@ -11,7 +11,8 @@ $("#dodajForm").submit(function(){
         data:serijalizacija
     });
     request.done(function(response,textStatus,jqXHR){
-        if((response=='Success')==0){
+        $poruka=response;
+        if(strcmp($poruka,"Success")==0){
             alert("Kolokvijum je zakazan");
             console.log("Uspešno zakazivanje");
             location.reload(true);
