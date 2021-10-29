@@ -6,7 +6,7 @@ $("#izmeniForm").submit(function(){
     const serializacija=$form.serialize();
     console.log(serializacija);
     request=$.ajax({
-        url:"handler/change.php",
+        url:"handler/update.php",
         type:"post",
         data:serializacija
     });
@@ -14,6 +14,7 @@ $("#izmeniForm").submit(function(){
         $poruka=response;
         if(($poruka=='Success')==0){
             console.log("operacija je ispravno izvršena");
+            alert("zamena je uspešno izvršena");
         }
         else
             console.log("Greška se desila: "+response);
